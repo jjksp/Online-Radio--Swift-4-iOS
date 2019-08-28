@@ -55,11 +55,18 @@ class NowPlayingViewController: UIViewController {
     
     // for Magnetic Field
     let motionManager = CMMotionManager()
-    let timeInterval: TimeInterval = 0.5
+    let timeIntervalMagnetic: TimeInterval = 0.5
     var magBase:[Double] = [0,0,0,0]
     var magDiff:[Double] = [0,0,0,0]
+    let maxMagF: Double = 1000.0
     
-
+    
+    // for Auto Changing Station
+    var timerStreamMonitor: Timer?
+    var howManyCountOnProblem = 0
+    let timeIntervalStream: TimeInterval = 5
+    let maxCountForChangeStation = 4        // 5 * 4 = 20 secs
+    
     //*****************************************************************
     // MARK: - ViewDidLoad
     //*****************************************************************
@@ -91,9 +98,26 @@ class NowPlayingViewController: UIViewController {
         previousButton.isHidden = hideNextPreviousButtons
         nextButton.isHidden = hideNextPreviousButtons
         
+        // for magnetic field
         self.startMagnetometerUpdates()
+        
+        // for auto changing station
+        self.timerStreamMonitor = Timer(timeInterval: self.timeIntervalStream, target: self, selector: #selector(NowPlayingViewController.timerUpdate), userInfo: nil, repeats: true)
+        RunLoop.main.add(self.timerStreamMonitor!, forMode: .defaultRunLoopMode)
+        // CHK : self.timerMonitoring?.invalidate()
     }
     
+    
+    // MARK: -
+    
+    @objc func timerUpdate() {
+        if self.howManyCountOnProblem >= self.maxCountForChangeStation {
+            print( "Busy station or Network problem [\(self.currentStation.name)] : nextPressed" )
+            self.nextPressed(self.nextButton)
+            self.howManyCountOnProblem = 0      // reset
+        }
+    }
+
     
     func startMagnetometerUpdates() {
         guard self.motionManager.isMagnetometerAvailable else {
@@ -101,7 +125,7 @@ class NowPlayingViewController: UIViewController {
             return
         }
         
-        self.motionManager.magnetometerUpdateInterval = self.timeInterval
+        self.motionManager.magnetometerUpdateInterval = self.timeIntervalMagnetic
         
         let queue = OperationQueue.current
         self.motionManager.startMagnetometerUpdates(to: queue!, withHandler: {
@@ -132,7 +156,7 @@ class NowPlayingViewController: UIViewController {
                     
                     let strMagF = String(format: "F:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[3])
                     
-                    if self.magDiff[3] > 800 {
+                    if self.magDiff[3] >= self.maxMagF {
                         self.nextPressed( self.nextButton )
                         print( strMagF )
                     }
@@ -243,17 +267,25 @@ class NowPlayingViewController: UIViewController {
         startNowPlayingAnimation(isPlaying)
     }
     
+    
+    // MARK: -
+    
     func playbackStateDidChange(_ playbackState: FRadioPlaybackState, animate: Bool) {
         
         let message: String?
         
         switch playbackState {
         case .paused:
-            message = "Station Paused..."
+            message = "Station Paused... : \(self.currentStation.name)"
+            self.howManyCountOnProblem += 1
+            if self.howManyCountOnProblem >= 3 { print( message ?? "" ) }
         case .playing:
             message = nil
+            self.howManyCountOnProblem = 0      // reset
         case .stopped:
-            message = "Station Stopped..."
+            message = "Station Stopped... : \(self.currentStation.name)"
+            self.howManyCountOnProblem += 1
+            if self.howManyCountOnProblem >= 3 { print( message ?? "" ) }
         }
         
         updateLabels(with: message, animate: animate)
