@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import CoreMotion
 
 //*****************************************************************
 // NowPlayingViewControllerDelegate
@@ -50,6 +51,14 @@ class NowPlayingViewController: UIViewController {
     let radioPlayer = FRadioPlayer.shared
     
     var mpVolumeSlider: UISlider?
+    
+    
+    // for Magnetic Field
+    let motionManager = CMMotionManager()
+    let timeInterval: TimeInterval = 0.5
+    var magBase:[Double] = [0,0,0,0]
+    var magDiff:[Double] = [0,0,0,0]
+    
 
     //*****************************************************************
     // MARK: - ViewDidLoad
@@ -81,6 +90,56 @@ class NowPlayingViewController: UIViewController {
         // Hide / Show Next/Previous buttons
         previousButton.isHidden = hideNextPreviousButtons
         nextButton.isHidden = hideNextPreviousButtons
+        
+        self.startMagnetometerUpdates()
+    }
+    
+    
+    func startMagnetometerUpdates() {
+        guard self.motionManager.isMagnetometerAvailable else {
+            print( "not supported : detecting magnetic field." )
+            return
+        }
+        
+        self.motionManager.magnetometerUpdateInterval = self.timeInterval
+        
+        let queue = OperationQueue.current
+        self.motionManager.startMagnetometerUpdates(to: queue!, withHandler: {
+            (magnetometerData, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+        
+            if self.motionManager.isMagnetometerActive {
+                if let magneticField = magnetometerData?.magneticField {
+                    
+                    let magStrengthDecimal = 4
+                    
+                    let magX = magneticField.x
+                    let magY = magneticField.y
+                    let magZ = magneticField.z
+                    // let magF = sqrt(pow(magX, 2)+pow(magY, 2)+pow(magZ, 2))
+                    
+                    self.magDiff[0] = magX - self.magBase[0]
+                    self.magDiff[1] = magY - self.magBase[1]
+                    self.magDiff[2] = magZ - self.magBase[2]
+                    self.magDiff[3] = sqrt(pow(self.magDiff[0], 2)+pow(self.magDiff[1], 2)+pow(self.magDiff[2], 2))
+                    
+                    // magXView.text = String(format: "X:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[0])
+                    // magYView.text = String(format: "Y:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[1])
+                    // magZView.text = String(format: "Z:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[2])
+                    
+                    let strMagF = String(format: "F:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[3])
+                    
+                    if self.magDiff[3] > 800 {
+                        self.nextPressed( self.nextButton )
+                        print( strMagF )
+                    }
+                    
+                }
+            }
+        })
     }
     
     //*****************************************************************
