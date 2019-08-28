@@ -1,0 +1,43 @@
+{
+    "station":
+    [
+        {
+            "name": "Box UK Radio danceradiouk",
+            "streamURL": "http://uk7.internet-radio.com:8226/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: top 40 pop 80s rock easy",
+            "longDesc": ""
+        },
+        {
+            "name": "Dance UK Radio danceradiouk",
+            "streamURL": "http://uk2.internet-radio.com:8024/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: dance house trance electro drum",
+            "longDesc": ""
+        },
+        {
+            "name": "Sound Fusion Radio",
+            "streamURL": "http://uk6.internet-radio.com:8346/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: soul funk r b and urban",
+            "longDesc": ""
+        },
+        {
+            "name": "Faymus Radio",
+            "streamURL": "http://uk7.internet-radio.com:8078/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: dancehall reggae rap r b and urban",
+            "longDesc": ""
+        },
+
+        {
+            "name": "Pigpen Radio",
+            "streamURL": "http://uk6.internet-radio.com:8213/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: reggae funk hip hop dub trip hop",
+            "longDesc": ""
+        }
+
+        
+    ]
+}

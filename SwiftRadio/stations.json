@@ -9,6 +9,13 @@
             "longDesc": ""
         },
         {
+            "name": "Power Kpop Web Radio",
+            "streamURL": "http://stm11.srvstm.com:12710/",
+            "imageURL": "",
+            "desc": "Genres: kpop",
+            "longDesc": ""
+        },
+        {
             "name": "Bamm Radio",
             "streamURL": "http://163.172.77.142:8129/listen.pls?sid=1",
             "imageURL": "",
@@ -42,6 +49,85 @@
             "imageURL": "",
             "desc": "Genres: kpop",
             "longDesc": ""
+        },
+        {
+            "name": "SBS PopAsia",
+            "streamURL": "http://sbs-ice.streamguys1.com/sbs-popasia",
+            "imageURL": "",
+            "desc": "Genres: jpop kpop cpop",
+            "longDesc": ""
+        },
+        {
+            "name": "Aewen Radio (Kpop)",
+            "streamURL": "http://209.58.145.135:8001/stream",
+            "imageURL": "",
+            "desc": "Genres: pop kpop korean",
+            "longDesc": ""
+        },
+        {
+            "name": "Aewen Radio (K-Jpop)",
+            "streamURL": "http://209.58.145.135:8031/stream",
+            "imageURL": "",
+            "desc": "Genres: pop jpop kpop japanese korean",
+            "longDesc": ""
+        },
+        {
+            "name": "Kland México",
+            "streamURL": "http://192.99.32.79:9864/;stream.nsv",
+            "imageURL": "",
+            "desc": "Genres: jpop kpop cpop",
+            "longDesc": ""
+        },
+        {
+            "name": "Station K-pop Radio",
+            "streamURL": "http://192.187.112.50:8325/stream",
+            "imageURL": "",
+            "desc": "Genres: kpop jpop",
+            "longDesc": ""
+        },
+        {
+            "name": "Imperio Kpop",
+            "streamURL": "http://stm11.painelcast.com:7306/",
+            "imageURL": "",
+            "desc": "Genres: electronic rock rnb pop hiphop kpop",
+            "longDesc": ""
+        },
+        
+        {
+            "name": "Time 2 Dance Radio",
+            "streamURL": "http://uk6.internet-radio.com:8332/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: dance pop r b hip hop",
+            "longDesc": ""
+        },
+        {
+            "name": "Venice Classic Radio Italia",
+            "streamURL": "http://174.36.206.197:8000/listen.pls?sid=1",
+            "imageURL": "",
+            "desc": "Genres: classical",
+            "longDesc": ""
+        },
+        {
+            "name": "Radio Domeldo Movie",
+            "streamURL": "http://185.105.4.53:3006/listen.pls?sid=1",
+            "imageURL": "",
+            "desc": "Genres: soundtracks classical opera",
+            "longDesc": ""
+        },
+        {
+            "name": "Current Hits FM",
+            "streamURL": "http://us3.internet-radio.com:8317/live.m3u",
+            "imageURL": "",
+            "desc": "Genres: top 40",
+            "longDesc": ""
+        },
+        {
+            "name": "Halcyon",
+            "streamURL": "http://uk6.internet-radio.com:8141/live.m3u",
+            "imageURL": "",
+            "desc": "Genres: alternative pop top 40",
+            "longDesc": ""
         }
+        
     ]
 }

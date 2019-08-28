@@ -58,6 +58,7 @@
 		CAA7C15D1FD77F3A003CABDF /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7C15B1FD77F3A003CABDF /* FRadioAPI.swift */; };
 		CAA7C15E1FD77F3A003CABDF /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7C15C1FD77F3A003CABDF /* FRadioPlayer.swift */; };
 		CAA8FDB52000614600050F77 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA8FDB42000614600050F77 /* RadioPlayer.swift */; };
+		D78EC7322316B47600A04F29 /* stations_notUsed.json in Resources */ = {isa = PBXBuildFile; fileRef = D78EC7312316B47600A04F29 /* stations_notUsed.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		CAA7C15B1FD77F3A003CABDF /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
 		CAA7C15C1FD77F3A003CABDF /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
 		CAA8FDB42000614600050F77 /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		D78EC7312316B47600A04F29 /* stations_notUsed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations_notUsed.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				945DB3C11AD58E3A00495EBB /* stations.json */,
+				D78EC7312316B47600A04F29 /* stations_notUsed.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				945DB3C21AD58E3A00495EBB /* stations.json in Resources */,
 				9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */,
 				945DB3C51AD5A6E200495EBB /* NothingFoundCell.xib in Resources */,
+				D78EC7322316B47600A04F29 /* stations_notUsed.json in Resources */,
 				5FDEE0221F72FF980064333C /* LaunchScreen.storyboard in Resources */,
 				9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */,
 			);
