@@ -53,9 +53,10 @@ class NowPlayingViewController: UIViewController {
     var mpVolumeSlider: UISlider?
     
     
-    // for Magnetic Field
+    // for Magnetic Field : ref. MagRadar
     let motionManager = CMMotionManager()
     let timeIntervalMagnetic: TimeInterval = 0.5
+    var magVals:[Double] = [0,1,2,3]
     var magBase:[Double] = [0,0,0,0]
     var magDiff:[Double] = [0,0,0,0]
     let maxMagF: Double = 1000.0
@@ -66,6 +67,7 @@ class NowPlayingViewController: UIViewController {
     var howManyCountOnProblem = 0
     let timeIntervalStream: TimeInterval = 5
     let maxCountForChangeStation = 4        // 5 * 4 = 20 secs
+    
     
     //*****************************************************************
     // MARK: - ViewDidLoad
@@ -112,8 +114,8 @@ class NowPlayingViewController: UIViewController {
     
     @objc func timerUpdate() {
         if self.howManyCountOnProblem >= self.maxCountForChangeStation {
-            print( "Busy station or Network problem [\(self.currentStation.name)] : nextPressed" )
-            self.nextPressed(self.nextButton)
+            print( "Busy station or Network problem [\(self.currentStation.name)] : tapNextBtnByApp" )
+            self.tapNextBtnByApp()
             self.howManyCountOnProblem = 0      // reset
         }
     }
@@ -143,7 +145,12 @@ class NowPlayingViewController: UIViewController {
                     let magX = magneticField.x
                     let magY = magneticField.y
                     let magZ = magneticField.z
-                    // let magF = sqrt(pow(magX, 2)+pow(magY, 2)+pow(magZ, 2))
+                    let magF = sqrt(pow(magX, 2)+pow(magY, 2)+pow(magZ, 2))
+                    
+                    self.magVals[0] = magX
+                    self.magVals[1] = magY
+                    self.magVals[2] = magZ
+                    self.magVals[3] = magF
                     
                     self.magDiff[0] = magX - self.magBase[0]
                     self.magDiff[1] = magY - self.magBase[1]
@@ -157,7 +164,7 @@ class NowPlayingViewController: UIViewController {
                     let strMagF = String(format: "F:%0."+String(magStrengthDecimal)+"f uT", self.magDiff[3])
                     
                     if self.magDiff[3] >= self.maxMagF {
-                        self.nextPressed( self.nextButton )
+                        self.tapNextBtnByApp()
                         print( strMagF )
                     }
                     
@@ -212,6 +219,14 @@ class NowPlayingViewController: UIViewController {
     @IBAction func nextPressed(_ sender: Any) {
         delegate?.didPressNextButton()
     }
+    
+    
+    func tapNextBtnByApp() {
+        self.howManyCountOnProblem = 0          // reset
+        self.magBase = self.magVals             // magnetic calibrate.
+        self.nextPressed(self.nextButton)
+    }
+    
     
     @IBAction func previousPressed(_ sender: Any) {
         delegate?.didPressPreviousButton()
