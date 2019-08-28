@@ -288,30 +288,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obn-8m-awZ" userLabel="AlbumArt" customClass="SpringImageView" customModule="SwiftRadio" customModuleProvider="target">
-                                <rect key="frame" x="70" y="101" width="274" height="180"/>
+                                <rect key="frame" x="70" y="144" width="274" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="hCD-tK-vVP"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WmY-ug-Nhz" userLabel="Controls Stack View">
-                                <rect key="frame" x="99" y="311" width="216" height="45"/>
+                                <rect key="frame" x="156" y="328" width="102" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-gy-z3a" userLabel="PreviousButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="f7r-qa-s7e"/>
-                                            <constraint firstAttribute="height" constant="45" id="qIK-DO-Pi2"/>
-                                        </constraints>
-                                        <state key="normal" image="btn-previous">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="selected" image="btn-pause"/>
-                                        <connections>
-                                            <action selector="previousPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QGd-YE-aem"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7t-tN-2wp" userLabel="PauseButton">
-                                        <rect key="frame" x="57" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="0QP-4Y-L0R"/>
                                             <constraint firstAttribute="height" constant="45" id="9ls-Nq-FcF"/>
@@ -325,7 +311,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-bZ-bdt" userLabel="PauseButton">
-                                        <rect key="frame" x="114" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="57" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="ebX-Zd-lOX"/>
                                             <constraint firstAttribute="height" constant="45" id="vqL-YC-gUW"/>
@@ -338,24 +324,10 @@
                                             <action selector="stopPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ER7-uh-Svz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-tm-QKv" userLabel="NextButton">
-                                        <rect key="frame" x="171" y="0.0" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="ClR-id-HJ9"/>
-                                            <constraint firstAttribute="width" constant="45" id="vPQ-1T-f9U"/>
-                                        </constraints>
-                                        <state key="normal" image="btn-next">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="selected" image="btn-pause"/>
-                                        <connections>
-                                            <action selector="nextPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xQb-Ex-byA"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a3Z-1t-AAA" userLabel="Volume Stack View">
-                                <rect key="frame" x="12" y="368" width="390" height="60"/>
+                                <rect key="frame" x="12" y="379" width="390" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vol-min" translatesAutoresizingMaskIntoConstraints="NO" id="Kmj-vC-DQe">
                                         <rect key="frame" x="0.0" y="22" width="18" height="16"/>
@@ -368,7 +340,7 @@
                                         <rect key="frame" x="26" y="0.0" width="338" height="60"/>
                                         <subviews>
                                             <slider hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iFC-eW-7WA">
-                                                <rect key="frame" x="6" y="15" width="326" height="31"/>
+                                                <rect key="frame" x="6" y="-2" width="326" height="65"/>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -392,7 +364,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8xJ-4F-WCE" userLabel="Labels Stack View">
-                                <rect key="frame" x="12" y="440" width="390" height="63.333333333333314"/>
+                                <rect key="frame" x="12" y="68" width="390" height="63.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
                                         <rect key="frame" x="129.66666666666666" y="0.0" width="130.99999999999997" height="31.333333333333332"/>
@@ -401,7 +373,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v3l-q6-g0h" userLabel="Artist Label">
-                                        <rect key="frame" x="143.66666666666666" y="39.333333333333314" width="102.66666666666666" height="24"/>
+                                        <rect key="frame" x="143.66666666666666" y="39.333333333333329" width="102.66666666666666" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -422,7 +394,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-OX-Xr1" userLabel="Station Desc Label">
-                                <rect key="frame" x="70" y="249" width="274" height="21"/>
+                                <rect key="frame" x="70" y="292" width="274" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wJP-em-2hX"/>
                                 </constraints>
@@ -465,19 +437,52 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-tm-QKv" userLabel="NextButton">
+                                <rect key="frame" x="324" y="439" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ClR-id-HJ9"/>
+                                    <constraint firstAttribute="width" constant="80" id="vPQ-1T-f9U"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn-next">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="btn-pause"/>
+                                <connections>
+                                    <action selector="nextPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xQb-Ex-byA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6n-gy-z3a" userLabel="PreviousButton">
+                                <rect key="frame" x="10" y="439" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="f7r-qa-s7e"/>
+                                    <constraint firstAttribute="height" constant="80" id="qIK-DO-Pi2"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn-previous">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" image="btn-pause"/>
+                                <connections>
+                                    <action selector="previousPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QGd-YE-aem"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ub6-am-LP5" firstAttribute="centerY" secondItem="GIj-4c-kRh" secondAttribute="centerY" id="2Ym-J6-vxU"/>
                             <constraint firstItem="obn-8m-awZ" firstAttribute="leading" secondItem="RA9-OX-Xr1" secondAttribute="leading" id="4LO-kb-G6v"/>
                             <constraint firstItem="RA9-OX-Xr1" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="-32" id="5fc-ws-2hz"/>
-                            <constraint firstItem="WmY-ug-Nhz" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="30" id="77z-hi-QGE"/>
-                            <constraint firstItem="obn-8m-awZ" firstAttribute="top" secondItem="aXI-gd-81R" secondAttribute="top" constant="37" id="9m0-ca-E91"/>
+                            <constraint firstItem="WmY-ug-Nhz" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="4" id="77z-hi-QGE"/>
+                            <constraint firstItem="obn-8m-awZ" firstAttribute="top" secondItem="aXI-gd-81R" secondAttribute="top" constant="80" id="9m0-ca-E91"/>
                             <constraint firstItem="obn-8m-awZ" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="70" id="Ad0-X2-0Fe"/>
+                            <constraint firstItem="rdn-tm-QKv" firstAttribute="centerY" secondItem="W6n-gy-z3a" secondAttribute="centerY" id="EAJ-Ie-HtN"/>
+                            <constraint firstItem="W6n-gy-z3a" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="10" id="Fcv-6q-K2b"/>
                             <constraint firstItem="GIj-4c-kRh" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="12" id="Hts-LO-0mm"/>
-                            <constraint firstItem="8xJ-4F-WCE" firstAttribute="top" secondItem="a3Z-1t-AAA" secondAttribute="bottom" constant="12" id="Rgp-Rr-5X1"/>
+                            <constraint firstItem="8xJ-4F-WCE" firstAttribute="top" secondItem="aXI-gd-81R" secondAttribute="top" constant="4" id="JUZ-h2-nfe"/>
+                            <constraint firstItem="aXI-gd-81R" firstAttribute="trailing" secondItem="rdn-tm-QKv" secondAttribute="trailing" constant="10" id="RmA-dk-3pl"/>
+                            <constraint firstItem="iFC-eW-7WA" firstAttribute="top" secondItem="k7t-tN-2wp" secondAttribute="bottom" constant="4" id="Wk0-39-Ztv"/>
+                            <constraint firstItem="W6n-gy-z3a" firstAttribute="top" secondItem="a3Z-1t-AAA" secondAttribute="bottom" id="XS7-We-vSc"/>
                             <constraint firstItem="aXI-gd-81R" firstAttribute="trailing" secondItem="8xJ-4F-WCE" secondAttribute="trailing" constant="12" id="a0R-gd-CTo"/>
-                            <constraint firstItem="a3Z-1t-AAA" firstAttribute="top" secondItem="WmY-ug-Nhz" secondAttribute="bottom" constant="12" id="epF-5G-BUS"/>
+                            <constraint firstItem="a3Z-1t-AAA" firstAttribute="top" secondItem="WmY-ug-Nhz" secondAttribute="bottom" constant="6" placeholder="YES" id="epF-5G-BUS"/>
                             <constraint firstItem="uXf-Wr-UiK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hPm-1B-yKf"/>
                             <constraint firstItem="aXI-gd-81R" firstAttribute="trailing" secondItem="Ub6-am-LP5" secondAttribute="trailing" constant="12" id="i7g-jR-lvv"/>
                             <constraint firstItem="8xJ-4F-WCE" firstAttribute="leading" secondItem="aXI-gd-81R" secondAttribute="leading" constant="12" id="iJJ-RH-r0a"/>
