@@ -2,6 +2,13 @@
     "station":
     [
         {
+            "name": "Kland México",
+            "streamURL": "http://192.99.32.79:9864/;stream.nsv",
+            "imageURL": "",
+            "desc": "Genres: jpop kpop cpop",
+            "longDesc": ""
+        },
+        {
             "name": "Box UK Radio danceradiouk",
             "streamURL": "http://uk7.internet-radio.com:8226/listen.pls",
             "imageURL": "",
