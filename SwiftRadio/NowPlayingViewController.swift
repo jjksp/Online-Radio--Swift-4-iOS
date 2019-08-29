@@ -293,14 +293,20 @@ class NowPlayingViewController: UIViewController {
         case .paused:
             message = "Station Paused... : \(self.currentStation.name)"
             self.howManyCountOnProblem += 1
-            if self.howManyCountOnProblem >= 3 { print( message ?? "" ) }
+            if self.howManyCountOnProblem >= 3 {
+                print( message ?? "" )
+                self.tapNextBtnByApp()
+            }
         case .playing:
             message = nil
             self.howManyCountOnProblem = 0      // reset
         case .stopped:
             message = "Station Stopped... : \(self.currentStation.name)"
             self.howManyCountOnProblem += 1
-            if self.howManyCountOnProblem >= 3 { print( message ?? "" ) }
+            if self.howManyCountOnProblem >= 3 {
+                print( message ?? "" )
+                self.tapNextBtnByApp()
+            }
         }
         
         updateLabels(with: message, animate: animate)
@@ -315,12 +321,19 @@ class NowPlayingViewController: UIViewController {
         case .loading:
             message = "Loading Station ..."
         case .urlNotSet:
-            message = "Station URL not valide"
+            message = "Station URL not valid"
+            self.howManyCountOnProblem += 1
+            if self.howManyCountOnProblem >= 3 { print( message ?? "" ) }
         case .readyToPlay, .loadingFinished:
             playbackStateDidChange(radioPlayer.playbackState, animate: animate)
             return
         case .error:
             message = "Error Playing"
+            self.howManyCountOnProblem += 1
+            if self.howManyCountOnProblem >= 3 {
+                print( message ?? "" )
+                self.tapNextBtnByApp()
+            }
         }
         
         updateLabels(with: message, animate: animate)
