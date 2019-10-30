@@ -2,6 +2,13 @@
     "station":
     [
         {
+            "name": "Halcyon",
+            "streamURL": "http://uk6.internet-radio.com:8141/live.m3u",
+            "imageURL": "",
+            "desc": "Genres: alternative pop top 40",
+            "longDesc": ""
+        },
+        {
             "name": "Kland México",
             "streamURL": "http://192.99.32.79:9864/;stream.nsv",
             "imageURL": "",

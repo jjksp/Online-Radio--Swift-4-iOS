@@ -113,13 +113,6 @@
             "imageURL": "",
             "desc": "Genres: top 40",
             "longDesc": ""
-        },
-        {
-            "name": "Halcyon",
-            "streamURL": "http://uk6.internet-radio.com:8141/live.m3u",
-            "imageURL": "",
-            "desc": "Genres: alternative pop top 40",
-            "longDesc": ""
         }
         
     ]

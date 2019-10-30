@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        SysLog.shi.out(arg:"SR_LOG", value:"launched")
+        
         // MPNowPlayingInfoCenter
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FRadioPlayer.shared.isAutoPlay = true
         FRadioPlayer.shared.enableArtwork = true
         FRadioPlayer.shared.artworkSize = 600
+        
+        SysLog.shi.out(arg:"SR_LOG", value:"ready VC")
         
         // Get weak ref of StationsViewController
         if let navigationController = window?.rootViewController as? UINavigationController {
@@ -40,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.backgroundTaskID = application.beginBackgroundTask(){
             [weak self] in
+            SysLog.shi.out(arg:"SR_LOG", value:"applicationWillResignActive")
             application.endBackgroundTask((self?.backgroundTaskID)!)
             self?.backgroundTaskID = UIBackgroundTaskInvalid
         }
@@ -59,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        SysLog.shi.out(arg:"SR_LOG", value:"didBecomeAct")
         application.endBackgroundTask(self.backgroundTaskID)
     }
 
@@ -73,6 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Remote Controls
 
     override func remoteControlReceived(with event: UIEvent?) {
+        
+        SysLog.shi.out(arg:"SR_LOG", value:"hmm")
+        
         super.remoteControlReceived(with: event)
         
         guard let event = event, event.type == UIEventType.remoteControl else { return }
