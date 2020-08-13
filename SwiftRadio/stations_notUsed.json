@@ -16,6 +16,13 @@
             "longDesc": ""
         },
         {
+            "name": "Big B Radio #AsianPOP",
+            "streamURL": "http://64.71.79.181:8020/listen.pls",
+            "imageURL": "",
+            "desc": "Genres: kpop jpop cpop",
+            "longDesc": ""
+        },
+        {
             "name": "Box UK Radio danceradiouk",
             "streamURL": "http://uk7.internet-radio.com:8226/listen.pls",
             "imageURL": "",
@@ -27,6 +34,13 @@
             "streamURL": "http://uk2.internet-radio.com:8024/listen.pls",
             "imageURL": "",
             "desc": "Genres: dance house trance electro drum",
+            "longDesc": ""
+        },
+        {
+            "name": "Power Kpop",
+            "streamURL": "http://45.43.200.50:12710/listen.pls?sid=1",
+            "imageURL": "",
+            "desc": "Genres: kpop",
             "longDesc": ""
         },
         {

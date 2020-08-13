@@ -2,13 +2,6 @@
     "station":
     [
         {
-            "name": "Power Kpop",
-            "streamURL": "http://45.43.200.50:12710/listen.pls?sid=1",
-            "imageURL": "",
-            "desc": "Genres: kpop",
-            "longDesc": ""
-        },
-        {
             "name": "Power Kpop Web Radio",
             "streamURL": "http://stm11.srvstm.com:12710/",
             "imageURL": "",
@@ -34,13 +27,6 @@
             "streamURL": "http://radio.jphip.com:8800/listen.pls",
             "imageURL": "",
             "desc": "Genres: jpop kpop cpop hip hop",
-            "longDesc": ""
-        },
-        {
-            "name": "Big B Radio #AsianPOP",
-            "streamURL": "http://64.71.79.181:8020/listen.pls",
-            "imageURL": "",
-            "desc": "Genres: kpop jpop cpop",
             "longDesc": ""
         },
         {
