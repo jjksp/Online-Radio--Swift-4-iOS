@@ -2,6 +2,21 @@
     "station":
     [
         {
+            "name": "SBS PopAsia",
+            "streamURL": "http://sbs-ice.streamguys1.com/sbs-popasia",
+            "imageURL": "",
+            "desc": "Genres: jpop kpop cpop",
+            "longDesc": ""
+        },
+        {
+            "name": "Imperio Kpop",
+            "streamURL": "http://stm11.painelcast.com:7306/",
+            "imageURL": "",
+            "desc": "Genres: electronic rock rnb pop hiphop kpop",
+            "longDesc": ""
+        },
+        
+        {
             "name": "Halcyon",
             "streamURL": "http://uk6.internet-radio.com:8141/live.m3u",
             "imageURL": "",

@@ -36,13 +36,7 @@
             "desc": "Genres: kpop",
             "longDesc": ""
         },
-        {
-            "name": "SBS PopAsia",
-            "streamURL": "http://sbs-ice.streamguys1.com/sbs-popasia",
-            "imageURL": "",
-            "desc": "Genres: jpop kpop cpop",
-            "longDesc": ""
-        },
+
         {
             "name": "Aewen Radio (Kpop)",
             "streamURL": "http://209.58.145.135:8001/stream",
@@ -64,14 +58,7 @@
             "desc": "Genres: kpop jpop",
             "longDesc": ""
         },
-        {
-            "name": "Imperio Kpop",
-            "streamURL": "http://stm11.painelcast.com:7306/",
-            "imageURL": "",
-            "desc": "Genres: electronic rock rnb pop hiphop kpop",
-            "longDesc": ""
-        },
-        
+
         {
             "name": "Time 2 Dance Radio",
             "streamURL": "http://uk6.internet-radio.com:8332/listen.pls",
